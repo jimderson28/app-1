@@ -47,13 +47,14 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter. ViewHolde
         final MyListData myListData = listdata.get(position);
         holder.textView.setText(myListData.getDescription());
         holder.imageView.setImageResource(myListData.getImgId());
-//        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(view.getContext(), "click on item: "
-//                        + myListData.getDescription(), Toast.LENGTH_LONG).show();
-//            }
-//        });
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "click on item: "
+                        + myListData.getDescription(), Toast.LENGTH_LONG).show();
+                listner.OnItemClick(position);
+            }
+        });
     }
 
     @Override

@@ -34,7 +34,7 @@ MyListAdapter adeapter = null;
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mList = MyListData.getMyListDataArrayList();
-        adeapter =  new MyListAdapter(mList);
+        adeapter =  new MyListAdapter(mList,this);
         recyclerView.setAdapter(adeapter);
         Button btnInsert = findViewById(R.id.btnIster);
         Button btndelete = findViewById(R.id.btnDelete);
