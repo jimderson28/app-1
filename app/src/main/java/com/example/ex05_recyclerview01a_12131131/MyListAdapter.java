@@ -1,5 +1,6 @@
 package com.example.ex05_recyclerview01a_12131131;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,8 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter. ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, @SuppressLint("RecyclerView")
+    int position) {
         final MyListData myListData = listdata.get(position);
         holder.textView.setText(myListData.getDescription());
         holder.imageView.setImageResource(myListData.getImgId());
