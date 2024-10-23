@@ -15,7 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
+,MyListAdapter.OnItemClickLiten{
 ArrayList<MyListData> mList = null;
 MyListAdapter adeapter = null;
     @Override
@@ -72,5 +73,12 @@ MyListAdapter adeapter = null;
         mList.remove(index);
         adeapter.notifyItemRemoved(index);
 
+    }
+
+    @Override
+    public void OnItemClick(int position) {
+        MyListData  item = mList.get(position);
+        item.setDescription("clicked");
+        adeapter.notifyItemChanged(position);
     }
 }
